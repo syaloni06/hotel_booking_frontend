@@ -1,0 +1,16 @@
+<h1 style="background-color: rgb(174, 50, 205); text-align: center;">Hotel Booking</h1>
+<div class="container">
+    <form>
+        <label>User Name:</label>
+        <input type="text" id="email" name="email" class="form-control" [(ngModel)]="model.email_id" [(ngModel)]="admin.admin_email_id">
+        <br>
+        <label>Password:</label>
+        <input type="text" id="password" name="password" class="form-control" [(ngModel)]="model.password" [(ngModel)]="admin.password">
+        <br>
+        <br>
+        <button type="submit" (click)="userlogin()">User Login</button>&nbsp; &nbsp;
+        <button type="submit" (click)="usersignup()">User Signup</button>&nbsp; &nbsp;
+        <button type="submit" (click)="adminlogin()">Admin Login</button>&nbsp; &nbsp;
+        <button type="submit" (click)="adminsignup()">Admin Signup</button>
+    </form>
+</div>

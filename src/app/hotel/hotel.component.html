@@ -1,0 +1,81 @@
+<h1 style="background-color: rgb(174, 50, 205); text-align: center;">Hotel Booking</h1>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotle_name</th>
+                <th>Location</th>
+                <th>Contact_no</th>
+                <th>Total_no_of_rooms</th>
+                <th>Price</th>
+                <th>No_of_rooms</th>
+                <th>Checkin_date</th>
+                <th>Checkout_date</th>
+                <th>Adding to Booking_list</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of posts">
+                <th>{{i.id}}</th>
+                <td>{{i.hotel_name}}</td>
+                <td>{{i.location}}</td>
+                <td>{{i.contact_no}}</td>
+                <td>{{i.total_no_of_rooms}}</td>
+                <td>{{i.price}}</td>
+                <td><input type="number" name="no_of_rooms" id=i.id [(ngModel)]="i.no_of_rooms"></td>
+                <td><input type="date" [(ngModel)]="i.checkin_date"></td>
+                <td><input type="date" [(ngModel)]="i.checkout_date"></td>
+                <td><button type="submit" (click)="add_to_cart(i.id, i.hotel_name, i.price, i.no_of_rooms, i.checkin_date, i.checkout_date, i.price)">Add To Cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <form>
+        <label>User Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="u.user_name" class="form-control">
+        <br>
+        <label>Address</label>
+        <input type="text" id="address" name="address" [(ngModel)]="u.address" class="form-control">
+        <br>
+        <label>Identity Proof</label>
+        <input type="text" id="identityProof" name="identityProof" [(ngModel)]="u.identityProof" class="form-control">
+        <br>
+        <br>
+        <button type="submit" (click)="book_now()">Book Now</button>
+    </form>
+</div>
+<br>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotle_name</th>
+                <th>Price</th>
+                <th>No_of_rooms</th>
+                <th>Checkin_date</th>
+                <th>Checkout_date</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+<tr *ngFor="let i of booking1">
+    <th>{{i.booking_id}}</th>
+    <td>{{i.hotel_name}}</td>
+    <td>{{i.no_of_rooms}}</td>
+    <td>{{i.price}}</td>
+   <td><h3>{{i.checkin_date}}</h3></td>
+   <td><h3>{{i.checkout_date}}</h3></td>
+   <td><h3>{{i.total_price}}</h3></td>
+   </tr>
+
+</tbody>
+</table>
+</div>
+
+<h1>Bill Amount: {{total}}</h1>
+    
+
+

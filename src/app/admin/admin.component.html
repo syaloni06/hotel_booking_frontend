@@ -1,0 +1,53 @@
+<h1 style="background-color: rgb(174, 50, 205); text-align: center;">Hotel Booking</h1>
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotle_name</th>
+                <th>Location</th>
+                <th>Contact_no</th>
+                <th>Total_no_of_rooms</th>
+                <th>Price</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let i of posts">
+                <th>{{i.id}}</th>
+                <td><input type="text" [(ngModel)]="i.hotel_name"></td>
+                <td><input type="text" [(ngModel)]="i.location"></td>
+                <td><input type="text" [(ngModel)]="i.contact_no"></td>
+                <td><input type="number" name="total_no_of_rooms" id=i.id [(ngModel)]="i.total_no_of_rooms"></td>
+                <td><input type="number" name="price" id=i.id [(ngModel)]="i.price"></td>
+                <td><button type="submit" (click)="update(i.id, i.hotel_name, i.location, i.contact_no, i.total_no_of_rooms, i.price)">Update</button></td>
+                <td><button type="submit" (click)="delete(i.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Hotle_name</th>
+                <th>Location</th>
+                <th>Contact_no</th>
+                <th>Total_no_of_rooms</th>
+                <th>Price</th>
+                <th>Add</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th><input type="number" [(ngModel)]="model2.id"></th>
+                <td><input type="text" [(ngModel)]="model2.hotel_name"></td>
+                <td><input type="text" [(ngModel)]="model2.location"></td>
+                <td><input type="text" [(ngModel)]="model2.contact_no"></td>
+                <td><input type="number" [(ngModel)]="model2.total_no_of_rooms"></td>
+                <td><input type="number" [(ngModel)]="model2.price"></td>
+                <td><button type="submit" (click)="create()">Add</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
