@@ -28,7 +28,8 @@ import { FormsModule } from '@angular/forms';
       {path: 'successful', component:SuccessfulComponent},
       {path: 'home', component:HomeComponent},
       {path: 'hotel', component:HotelComponent},
-      {path: 'admin', component:AdminComponent}
+      {path: 'admin', component:AdminComponent},
+      {path: '', redirectTo: '/home', pathMatch: 'full'}
     ])
   ],
   providers: [
